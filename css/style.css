@@ -18,12 +18,13 @@ a {
 }
 
 .container {
-    max-width: 1194px !important;
+    max-width: 1194px;
 }
 
 .home {
-    background: url(../images/header-bg.jpg);
+    background: url(../images/header-bg.jpg)no-repeat center;
     background-size: cover;
+    height: 648px;
 }
 
 nav {
@@ -57,11 +58,6 @@ nav ul li a {
 nav ul li a:hover {
     color: #FFDF21;
 }
-
-.header-content img {
-    height: 100%;
-}
-
 .header-content-main {
     padding-top: 180px;
 }
@@ -94,14 +90,21 @@ nav ul li a:hover {
     height: 52px;
     border: 0px;
     margin-top: 59px;
-    background: linear-gradient(128.54deg, #FFDF21 -63.12%, #FCA412 78.23%);
+    background: transparent;
     border-radius: 4px;
     font-family: var(--font1);
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
-    color: #FFFFFF;
+    border: 1px solid #FCA412;
+    color: #FCA412;
+    transition: 300ms ease;
+}
+.header-content-main button:hover
+{
+    background: linear-gradient(128.54deg, #FFDF21 -63.12%, #FCA412 78.23%);
+    color: white;
 }
 
 .section1 {
@@ -151,7 +154,7 @@ nav ul li a:hover {
 }
 
 .sec1-box:hover {
-    border-bottom: 5px solid #FFDF21;
+    border-bottom: 5px solid #FFDF21 inset;
 }
 
 .sec1-box img {
@@ -212,7 +215,7 @@ nav ul li a:hover {
 }
 
 .section2 button:hover {
-    background-color: #FCA412;
+    background: linear-gradient(128.54deg, #FFDF21 -63.12%, #FCA412 78.23%);
     border: 0px;
     color: white;
 }
@@ -220,11 +223,6 @@ nav ul li a:hover {
 .section3 {
     padding: 91px 0px 80px 0px;
 }
-
-.sec3-content {
-    padding-top: 88px;
-}
-
 .section3 h1 {
     font-family: var(--font1);
     font-style: normal;
@@ -269,7 +267,7 @@ nav ul li a:hover {
 
 .section3 button:hover {
     color: white;
-    background-color: #FCA412;
+    background: linear-gradient(128.54deg, #FFDF21 -63.12%, #FCA412 78.23%);
     border: 0px;
 }
 
@@ -288,8 +286,7 @@ nav ul li a:hover {
 }
 .section4 {
     padding: 80px 0px;
-    background: url(../images/blog.png)no-repeat;
-    background-position: 530px 176px;
+    background: url(../images/blog.png)no-repeat center;
 }
 
 .section4 h1 {
@@ -360,7 +357,7 @@ nav ul li a:hover {
 }
 
 .section4 button:hover {
-    background-color: #FCA412;
+    background: linear-gradient(128.54deg, #FFDF21 -63.12%, #FCA412 78.23%);
     color: white;
     border: 0px;
 }
@@ -432,6 +429,7 @@ nav ul li a:hover {
     padding: 28px 18px 20px 22px;
     border: 1px solid #EDEDED;
     border-radius: 16px;
+    height: 100%;
 }
 
 .sec6-box h3 {
@@ -950,7 +948,13 @@ nav ul li a {
     .sm-none {
         display: none;
     }
-
+    .sm-center{
+        display: grid;
+        justify-content: center;
+    }
+    .home{
+        background-image: url(../images/header-bg2.jpg);
+    }
     nav {
         padding: 14px 12px 23px 15px;
         opacity: 1;
@@ -1165,3 +1169,91 @@ color: white;
         margin-bottom: 24px;
     }
 }
+@media only screen and (min-width: 576px) and (max-width: 992px){
+.md-none{
+    display: none;
+}
+.md-center{
+    display: grid;
+    justify-content: center;
+}
+nav {
+    padding: 14px 15px 23px 15px;
+    opacity: 1;
+}
+nav button {
+    background-color: transparent;
+    border: 0px;
+    color: white;
+    font-size: 22px;
+}
+nav ul{
+    display: block;
+}
+nav li{
+    margin: 15px 0px !important;
+}
+nav ul li a{
+    font-size: 18px;
+}
+.offcanvas{
+    background: url(../images/footer-bg.png)no-repeat #1A1A1A;
+    background-position-y: -100px;
+}
+.offcanvas-header{
+    font-family: var(--font1);
+font-style: normal;
+font-weight: 500;
+font-size: 35px;
+line-height: 73px;
+padding-bottom: 0px;
+text-align: center;
+color: white;
+  }
+  .offcanvas-header button{
+    width: fit-content;
+    height: 40px;
+  }
+  .offcanvas-body {
+    padding-top: 0px;
+  }
+  .sec1-box {
+    margin-bottom: 24px;
+  }
+  .sec6-box {
+    margin-bottom: 24px;
+  }
+  .sec8-box{
+    margin-bottom: 24px;
+  }
+  .footer-nav ul {
+    margin-top: 15px;
+    margin-left: 0px;
+  }
+  .footer-2 ul {
+    padding-left: 0px;
+  }
+  .disclaimer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .footer-nav {
+    margin-top: 36px;
+    margin-bottom: 26px;
+  }
+  .about-sec3-box{
+    margin-bottom: 24px;
+}
+}
+@media only screen and (min-width: 992px) and (max-width: 1350px){
+    nav {
+        padding: 23px 25px 23px 25px;
+    }
+    .app-img img{
+        width: 140px;
+    }
+    .lg-none{
+        display: none;
+    }
+}
+
